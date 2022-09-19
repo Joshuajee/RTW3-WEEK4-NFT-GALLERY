@@ -2,7 +2,7 @@ const NFTCard = ({ nft }) => {
 
 
     return (
-        <div style={{background: "red", width: "300px"}}>
+        <div style={{width: "300px"}}>
 
             <div className="rounded-md">
                 <img  width={"300"} src={nft.media[0].gateway} ></img>
@@ -13,7 +13,9 @@ const NFTCard = ({ nft }) => {
                 <div className="">
                     <h2 className="text-xl text-gray-800">{nft.title}</h2>
                     <p className="text-gray-600">Id: {nft.id.tokenId.substr(nft.id.tokenId.length - 4)}</p>
-                    <p className="text-gray-600" >{`${nft.contract.address.substr(0, 4)}...${nft.contract.address.substr(nft.contract.address.length - 4)}`} <button onClick={() => navigator.clipboard.writeText(nft.contract.address)}>Copy</button></p>
+                    <p className="text-gray-600" >{`${nft.contract.address.substr(0, 4)}...${nft.contract.address.substr(nft.contract.address.length - 4)}`} 
+                    <button className="bg-slate-500 text-white bg-blue-400 px-4 py-2 mt-3 rounded-sm"
+                    onClick={() => navigator.clipboard.writeText(nft.contract.address)}>Copy</button></p>
                 </div>
 
                 <div className="flex-grow mt-2">
